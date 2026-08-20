@@ -1,11 +1,3 @@
-"""Tải tất cả file bên ngoài (SharePoint + Google Drive) từ dữ liệu crawl.
-
-SharePoint: dùng agent-browser (browser session đã có quyền truy cập).
-Google Drive: dùng curl trực tiếp (uc?export=download).
-
-Kết quả lưu vào cawl/data/external_files/
-Log: cawl/data/external_files/download_log.json
-"""
 import json, os, re, subprocess, time, sys
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs, unquote

@@ -1,16 +1,3 @@
-"""FastAPI chat app: API hỏi đáp RAG cho sinh viên HUFLIT.
-
-Toàn bộ tham số đọc từ config/app.yaml (port, CORS) và config/database.yaml.
-
-Chạy server:
-    .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
-
-Endpoints:
-    GET  /health          -> kiểm tra server + DB
-    POST /chat            -> hỏi đáp RAG {"question": "..."}
-    GET  /                -> thông tin API
-"""
-
 from __future__ import annotations
 
 import logging

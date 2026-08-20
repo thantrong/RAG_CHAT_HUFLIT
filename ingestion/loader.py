@@ -1,14 +1,3 @@
-"""Đọc dữ liệu đã crawl -> Document (có làm sạch NLP).
-
-Kiến trúc 3 tầng:
-    TẦNG 1 (RAW):     {path_data}/news/{category}/{source_id}.json   <- crawler ghi
-    TẦNG 2 (CLEANED): {path_data}/cleaned/{kind}/{doc_id}.json       <- clean_step ghi
-    TẦNG 3 (EMBED):   PGVector                                        <- main.py đọc từ TẦNG 2
-
-CrawlDataLoader: đọc RAW + làm sạch (dùng cho clean_step).
-CleanedDataLoader: đọc từ thư mục CLEANED (dùng cho ingestion.main embed).
-"""
-
 from __future__ import annotations
 
 import json

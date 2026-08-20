@@ -1,15 +1,3 @@
-"""Hybrid Retriever (LangChain): PGVector + BM25 + weighted fusion + Voyage rerank.
-
-Toàn bộ tham số đọc từ config/ (retrieval.yaml, reranker.yaml,
-database.yaml, embedding.yaml). Secret đọc từ .env qua settings.py.
-
-Quy trình:
-1. Vector search (PGVector cosine) -> vector.top_k
-2. BM25 keyword search (toàn bộ corpus trong DB) -> bm25.top_k
-3. Weighted fusion: vector_weight*vector + bm25_weight*bm25 -> final_top_k
-4. Rerank bằng Voyage rerank API -> reranker.top_k kết quả cuối
-"""
-
 from __future__ import annotations
 
 import logging

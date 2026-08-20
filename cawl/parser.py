@@ -1,9 +1,3 @@
-"""Phân tích HTML của portal HUFLIT.
-
-Trang danh sách: /News/Type/{type_id}?page={n} -> trích danh sách link chi tiết.
-Trang chi tiết: /News/Detail/{id}/{slug}   -> trích tiêu đề, nội dung, file đính kèm.
-"""
-
 from __future__ import annotations
 
 import logging

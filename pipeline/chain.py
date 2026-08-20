@@ -1,11 +1,3 @@
-"""RAG Chain (LangChain): prompt ngữ cảnh + LLM trả lời.
-
-Toàn bộ tham số đọc từ config/llm.yaml (model, endpoint, temperature,
-system_prompt...). API key đọc từ .env qua settings.py.
-
-Chain: query -> HybridRetriever -> format ngữ cảnh -> LLM -> câu trả lời + nguồn.
-"""
-
 from __future__ import annotations
 
 import logging

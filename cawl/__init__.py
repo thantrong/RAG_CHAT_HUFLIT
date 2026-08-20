@@ -1,5 +1,3 @@
-"""Module crawl dữ liệu website trường HUFLIT cho RAG chat sinh viên."""
-
 from cawl.config import (
     ContentConfig,
     CrawlConfig,

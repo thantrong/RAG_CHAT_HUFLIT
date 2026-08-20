@@ -1,10 +1,3 @@
-"""Cấu hình cho module pipeline (retrieval + rerank + LLM).
-
-Đọc từ config/: retrieval.yaml, reranker.yaml, llm.yaml,
-database.yaml, embedding.yaml, app.yaml.
-Secret (API key, mật khẩu DB) đọc từ .env qua settings.py.
-"""
-
 from __future__ import annotations
 
 import os

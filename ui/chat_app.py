@@ -1,11 +1,3 @@
-"""Giao diện chat Streamlit cho RAG sinh viên HUFLIT.
-
-Toàn bộ tham số đọc từ config/app.yaml (api_url, timeout, suggestions).
-
-Chạy giao diện (yêu cầu FastAPI đang chạy):
-    .venv/bin/streamlit run ui/chat_app.py
-"""
-
 from __future__ import annotations
 
 import os

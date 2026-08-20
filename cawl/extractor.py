@@ -1,9 +1,3 @@
-"""Trích xuất text từ các loại file tải về (PDF, DOCX...).
-
-PDF: phát hiện BẢNG và trích riêng từng hàng/cột (phân cách " | ")
-để số liệu không bị dính vào nhau (vd: "10.000.0002 Trần Ngọc...").
-"""
-
 from __future__ import annotations
 
 import logging

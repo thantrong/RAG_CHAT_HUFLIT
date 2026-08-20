@@ -1,5 +1,3 @@
-"""Lưu trữ dữ liệu crawl xuống đĩa dạng JSON và file attachments."""
-
 from __future__ import annotations
 
 import json

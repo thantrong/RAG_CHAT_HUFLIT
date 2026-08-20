@@ -4,7 +4,7 @@ __pycache__/
 .venv/
 venv/
 
-# Môi trường (chứa API key, mật khẩu — KHÔNG commit)
+
 .env
 
 # Dữ liệu crawl + cleaned + file tải về (dung lượng lớn)

@@ -1,24 +1,3 @@
-"""Cấu hình tập trung của toàn project.
-
-QUY ƯỚC:
-    - Mọi THAM SỐ cấu hình nằm trong config/*.yaml (mỗi module một file tương ứng).
-    - Mọi SECRET (API key, mật khẩu) nằm trong .env — KHÔNG lưu trong yaml.
-
-Các file yaml:
-    database.yaml   -> kết nối PostgreSQL + pgvector (collection, distance...)
-    embedding.yaml  -> embedding model (provider, model, dim, batch)
-    llm.yaml        -> LLM (model, endpoint, temperature, system_prompt...)
-    retrieval.yaml  -> truy xuất hybrid (vector/bm25/fusion)
-    reranker.yaml   -> rerank
-    chunking.yaml   -> tách chunk
-    app.yaml        -> FastAPI + Streamlit (port, url, timeout, suggestions)
-    crawl.yaml      -> crawler + extraction timeout + external download
-    junk_phrases.yaml -> thư viện từ rác
-
-Các secret trong .env:
-    DB_PASSWORD, VOYAGE_API_KEY, GOOGLE_API_KEY, HUFLIT_USERNAME, HUFLIT_PASSWORD
-"""
-
 from __future__ import annotations
 
 import os

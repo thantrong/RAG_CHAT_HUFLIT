@@ -1,5 +1,3 @@
-"""Tải nội dung từ web với retry và session dùng chung."""
-
 from __future__ import annotations
 
 import logging

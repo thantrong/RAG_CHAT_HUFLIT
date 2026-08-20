@@ -1,10 +1,3 @@
-"""CLI hỏi đáp RAG cho sinh viên HUFLIT.
-
-Ví dụ:
-    python -m pipeline.main "Nội quy phòng thi là gì?"
-    python -m pipeline.main "Khi nào đóng học phí học kỳ 3?"
-"""
-
 from __future__ import annotations
 
 import argparse

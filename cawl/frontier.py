@@ -1,15 +1,3 @@
-"""Frontier (hàng đợi crawl) với định danh URL qua hash.
-
-Cơ chế:
-- Mỗi URL được canonicalize rồi băm (hash) thành mã định danh duy nhất.
-- Queue lưu danh sách URL chờ xử lý.
-- Visited set lưu các hash đã xử lý để tránh crawl trùng.
-
-Hỗ trợ 2 backend:
-- memory: lưu trong bộ nhớ (mất khi kết thúc tiến trình).
-- sqlite: lưu xuống đĩa (persistent, phù hợp crawl lại nhiều lần).
-"""
-
 from __future__ import annotations
 
 import hashlib

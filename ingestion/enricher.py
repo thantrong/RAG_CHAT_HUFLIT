@@ -1,14 +1,3 @@
-"""Enricher: nạp nội dung các file bên ngoài (SharePoint/Google Drive) đã tải.
-
-Đọc download_log.json, trích text từ các file tải OK (pdf/docx),
-tạo Document cho mỗi file. Được gọi từ loader để bổ sung vào pipeline.
-
-Sử dụng:
-    from ingestion.enricher import ExternalFileLoader
-    loader = ExternalFileLoader(path_data)
-    for doc in loader.iter_documents(): ...
-"""
-
 from __future__ import annotations
 
 import json

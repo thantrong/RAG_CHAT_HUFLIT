@@ -1,25 +1,3 @@
-"""CLI chạy bước EMBED (tầng 3) bằng LangChain:
-    đọc dữ liệu ĐÃ LÀM SẠCH từ cleaned/ -> tách chunk
-    -> embed (VoyageAIEmbeddings) -> lưu PGVector (langchain-postgres).
-
-Kiến trúc 3 tầng (mỗi tầng kiểm tra được):
-    TẦNG 1 (RAW):     cawl/data/news/...           <- crawler ghi
-    TẦNG 2 (CLEANED): cawl/data/cleaned/...        <- ingestion.clean_step ghi
-    TẦNG 3 (EMBED):   PGVector                     <- file NÀY đọc từ TẦNG 2
-
-Toàn bộ tham số đọc từ config/ (chunking.yaml, embedding.yaml, database.yaml).
-
-Luồng chuẩn:
-    1. python -m ingestion.clean_step          # raw -> cleaned/ (duyệt nội dung ở đây)
-    2. python -m ingestion.main --clear        # cleaned/ -> embed -> PGVector
-
-Ví dụ:
-    python -m ingestion.main                     # embed toàn bộ từ cleaned/
-    python -m ingestion.main --limit 5           # chỉ 5 document đầu
-    python -m ingestion.main --dry-run           # chỉ load + chunk, không embed/store
-    python -m ingestion.main --clear             # xoá collection cũ trước khi ingest
-"""
-
 from __future__ import annotations
 
 import argparse

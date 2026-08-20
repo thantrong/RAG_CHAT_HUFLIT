@@ -1,9 +1,3 @@
-"""Cấu hình cho module crawl.
-
-TOÀN BỘ cấu hình được đọc từ file config/crawl.yaml.
-Không hardcode bất kỳ giá trị nào trong code.
-"""
-
 from __future__ import annotations
 
 import os

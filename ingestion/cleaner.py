@@ -1,20 +1,3 @@
-"""Bước làm sạch NLP: xử lý nội dung crawl trước khi chunking + embedding.
-
-Pipeline (theo config/junk_phrases.yaml):
-    1. Re-extract text từ content_html (sửa lỗi cắt vụn do <span> inline)
-    2. Chuẩn hóa Unicode về NFC
-    3. Thay ký tự đặc biệt (zero-width, nbsp, dash...) theo thư viện
-    4. Xoá cụm từ rác inline (vui lòng xem tại đây, bấm vào để xem...)
-    5. Xoá dòng rác (dòng chỉ chứa ký tự vô nghĩa)
-    6. Gộp khoảng trắng/xuống dòng thừa, xoá dòng lặp
-
-Sử dụng:
-    from ingestion.cleaner import TextCleaner
-    cleaner = TextCleaner()
-    clean_text = cleaner.clean_html(html)      # từ HTML gốc
-    clean_text = cleaner.clean_text(text)      # từ text có sẵn
-"""
-
 from __future__ import annotations
 
 import logging

@@ -1,18 +1,3 @@
-"""Bước làm sạch (NLP): đọc dữ liệu thô -> TextCleaner -> ghi ra thư mục cleaned/.
-
-Kiến trúc 3 tầng tách biệt:
-    TẦNG 1 (RAW):     cawl/data/news/{category}/{source_id}.json   <- crawler ghi
-    TẦNG 2 (CLEANED): cawl/data/cleaned/{kind}/{doc_id}.json       <- bước này ghi
-    TẦNG 3 (EMBED):   PGVector                                      <- ingestion.main đọc từ TẦNG 2
-
-Mỗi document giữ NGUYÊN doc_id qua các tầng để đối chiếu:
-    news-{source_id} | att-{checksum[:12]} | ext-{file_stem}
-
-Chạy:
-    python -m ingestion.clean_step              # làm sạch toàn bộ
-    python -m ingestion.clean_step --limit 10   # chỉ 10 document đầu
-"""
-
 from __future__ import annotations
 
 import argparse

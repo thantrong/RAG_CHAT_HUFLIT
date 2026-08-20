@@ -1,13 +1,3 @@
-"""CLI để chạy crawl dữ liệu portal HUFLIT bằng cơ chế frontier (queue + hash).
-
-Mỗi lần chạy LUÔN bắt đầu với một queue MỚI: file queue sqlite cũ (nếu có)
-được xoá tự động trước khi crawl, nên không cần cờ --clear-queue.
-
-Ví dụ:
-    python -m cawl.main                       # crawl theo các loại tin trong config
-    python -m cawl.main --limit 50            # giới hạn tổng số URL xử lý
-"""
-
 from __future__ import annotations
 
 import argparse

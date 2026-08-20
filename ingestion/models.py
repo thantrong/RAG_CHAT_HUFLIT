@@ -1,9 +1,3 @@
-"""Dataclass cho tầng ingestion: Document (tài liệu gốc).
-
-Chunking/embedding do LangChain đảm nhận (RecursiveCharacterTextSplitter,
-VoyageAIEmbeddings), nên chỉ cần model Document cho dữ liệu nguồn.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass, field

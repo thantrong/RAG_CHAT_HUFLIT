@@ -1,13 +1,3 @@
-"""Crawler chính: điều phối toàn bộ quá trình thu thập dữ liệu portal HUFLIT.
-
-Quy trình dùng Frontier (queue + hash):
-1. Push các URL danh sách (loại tin) vào frontier; mỗi URL được hash định danh.
-2. Pop URL từ queue, tải & parse -> được các link chi tiết.
-3. Push link chi tiết vào queue (tự động chặn nếu hash trùng/đã visited).
-4. Pop link chi tiết -> crawl từng bài -> lưu JSON + tải attachments.
-5. Đánh dấu visited bằng hash sau khi xử lý.
-"""
-
 from __future__ import annotations
 
 import logging

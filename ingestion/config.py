@@ -1,9 +1,3 @@
-"""Cấu hình cho module ingestion.
-
-Đọc từ config/: chunking.yaml, crawl.yaml, embedding.yaml, database.yaml.
-Secret đọc từ .env qua settings.py.
-"""
-
 from __future__ import annotations
 
 import os
