@@ -239,14 +239,3 @@ HUFLIT_PASSWORD=...
 
 **Muốn đổi tham số** (vd: đổi model, đổi chunk size, đổi port):
 sửa file yaml tương ứng rồi restart server — không cần đụng code.
-
-## 📌 Ghi chú vận hành
-
-- **IP bị chặn khi crawl:** portal.huflit.edu.vn có thể chặn IP WiFi nhà;
-  dùng hotspot điện thoại nếu gặp lỗi TCP open nhưng HTTP im lặng.
-- **PDF phức tạp:** extractor có timeout 60s/file, file treo sẽ bị bỏ qua
-  (không chặn pipeline).
-- **Bảng trong PDF:** được trích riêng từng hàng/cột (phân cách ` | `),
-  số liệu không bị dính.
-- **Stopwords:** KHÔNG xoá khỏi nội dung (embedding model cần câu tự nhiên);
-  BM25 tự xử lý qua IDF.
