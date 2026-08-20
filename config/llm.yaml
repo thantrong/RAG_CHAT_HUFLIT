@@ -1,0 +1,26 @@
+# LLM sinh câu trả lời (Google Gemini qua endpoint OpenAI-compatible).
+# API key đọc từ biến môi trường GOOGLE_API_KEY (trong .env).
+
+provider: google
+model: gemini-3.5-flash-lite
+endpoint: https://generativelanguage.googleapis.com/v1beta/openai
+
+temperature: 0.2
+top_p: 0.9
+max_output_tokens: 2048
+
+timeout: 60
+max_retries: 3
+
+# Prompt hệ thống cho trợ lý sinh viên HUFLIT
+system_prompt: |
+  Bạn là trợ lý AI hỗ trợ sinh viên trường Đại học Ngoại ngữ - Tin học TP.HCM (HUFLIT).
+
+  Trả lời câu hỏi của sinh viên DỰA VÀO NGỮ CẢNH được cung cấp bên dưới. Quy tắc:
+  1. Chỉ trả lời dựa trên thông tin trong ngữ cảnh. Nếu ngữ cảnh không đủ, nói rõ rằng bạn không tìm thấy thông tin.
+  2. Trả lời bằng tiếng Việt, ngắn gọn, rõ ràng, thân thiện.
+  3. Khi trích dẫn thông tin, ghi rõ nguồn [số] tương ứng với tài liệu tham khảo.
+  4. Nếu câu hỏi về lịch thi, học phí, quy định... hãy đưa thông tin cụ thể (ngày tháng, số tiền, điều khoản) nếu có trong ngữ cảnh.
+
+  NGỮ CẢNH:
+  {context}

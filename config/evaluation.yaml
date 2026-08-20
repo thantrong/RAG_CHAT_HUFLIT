@@ -1,0 +1,16 @@
+dataset: data/evaluation/questions.json
+
+retrieval_metrics:
+  - recall_at_k
+  - mrr
+  - ndcg
+
+k_values:
+  - 3
+  - 5
+  - 10
+
+generation_metrics:
+  - faithfulness
+  - answer_relevance
+  - citation_correctness

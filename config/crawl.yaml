@@ -1,0 +1,95 @@
+base_url: "https://portal.huflit.edu.vn/"
+
+Path_Data: "/Users/thantrong/Code_TH/RAG_CHAT/cawl/data"
+
+crawl_interval_hours: 6
+
+max_concurrency: 5
+request_timeout: 20
+
+retry:
+  enabled: true
+  max_attempts: 3
+  backoff_seconds: 2
+
+content:
+  remove:
+    - nav
+    - footer
+    - script
+    - style
+
+download_attachments: true
+
+allowed_types:
+  - html
+  - pdf
+  - docx
+
+# --- Trích xuất text từ file (PDF/DOCX) ---
+extraction:
+  timeout: 60          # giây tối đa để trích text MỘT file (quá giờ -> bỏ qua)
+
+# --- Tải file bên ngoài (SharePoint / Google Drive) ---
+external:
+  session: huflit-sp   # tên browser session của agent-browser
+  command_timeout: 60  # giây tối đa cho mỗi lệnh shell
+  politeness_delay: 1  # giây nghỉ giữa các lần tải
+
+# --- Cấu hình crawler: queue & frontiers (định danh URL qua hash) ---
+crawler:
+  enabled: true
+  queue_backend: sqlite
+  queue_path: crawler_queue.sqlite
+  hash_algorithm: md5
+  hash_length: 16
+  canonicalize: true
+  politeness_delay: 0.5
+  max_pages_total: 0
+
+# --- Tất cả loại tin trên portal (22 mục) ---
+news_types:
+  - id: 1
+    display: "Thông báo chung"
+  - id: 1012
+    display: "Kế hoạch năm học"
+  - id: 1016
+    display: "Quy định - Quy chế"
+  - id: 1030
+    display: "Quy định về công tác đào tạo"
+  - id: 11
+    display: "Thông báo Phòng Đào tạo Đại học"
+  - id: 13
+    display: "Thông báo Phòng Chính trị - Công tác Sinh viên"
+  - id: 1018
+    display: "Đánh giá kết quả rèn luyện sinh viên"
+  - id: 1025
+    display: "Thông báo Tuần sinh hoạt công dân - Sinh viên"
+  - id: 1026
+    display: "Thông báo Bộ phận Y Tế"
+  - id: 1023
+    display: "Học bổng - Khen thưởng"
+  - id: 1011
+    display: "Thông báo Phòng Khảo thí - Bảo đảm chất lượng giáo dục"
+  - id: 14
+    display: "Thông báo Phòng Kế hoạch - Tài chính"
+  - id: 1010
+    display: "Hướng dẫn sử dụng"
+  - id: 1014
+    display: "Các câu hỏi thường gặp"
+  - id: 1015
+    display: "Kí hiệu phòng học và cơ sở"
+  - id: 1017
+    display: "Mẫu đơn"
+  - id: 1019
+    display: "Curriculums"
+  - id: 1020
+    display: "Chương trình đào tạo"
+  - id: 1022
+    display: "Đề án mở ngành"
+  - id: 1028
+    display: "Course Outlines"
+  - id: 1024
+    display: "Đề cương chi tiết học phần"
+  - id: 1029
+    display: "Cẩm nang - Sổ tay sinh viên"

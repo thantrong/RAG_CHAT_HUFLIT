@@ -1,0 +1,18 @@
+strategy: recursive
+
+chunk_size: 1000
+chunk_overlap: 120
+
+separators:
+  - "\n## "
+  - "\n### "
+  - "\n\n"
+  - "\n"
+  - ". "
+  - " "
+
+min_chunk_size: 150
+max_chunk_size: 1200
+
+preserve_headings: true
+preserve_lists: true

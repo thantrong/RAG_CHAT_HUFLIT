@@ -1,0 +1,7 @@
+# Embedding model (VoyageAI).
+# API key đọc từ biến môi trường VOYAGE_API_KEY (trong .env).
+
+provider: voyage
+model: voyage-4
+dim: 1024          # số chiều vector (bắt buộc khớp model)
+batch_size: 16     # số text mỗi lần gọi API

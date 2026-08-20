@@ -1,0 +1,60 @@
+# Thư viện từ/cụm từ rác cần xoá khỏi nội dung trước khi embedding.
+# inline_patterns: regex (case-insensitive), khớp sẽ bị thay bằng ""
+# line_patterns: regex, nếu cả dòng khớp thì xoá dòng đó
+# char_replacements: ký tự -> thay thế
+
+# --- Cụm từ rác: thay bằng "" (xoá inline) ---
+inline_patterns:
+  - '<<vui lòng xem tại đây>>'
+  - 'vui lòng xem tại đây'
+  - 'bấm vào để xem'
+  - 'bấm vào đây để xem'
+  - 'xem tại đây'
+  - 'TẠI ĐÂY'
+  - 'xem chi tiết tại đây'
+  - 'chi tiết xem tại'
+  - 'tải về tại đây'
+  - 'tải file tại đây'
+  - 'download tại đây'
+  - 'nhấn vào đây'
+  - 'click vào đây'
+  - 'click tại đây'
+  - 'vui lòng bấm vào'
+  - 'vui lòng click'
+  - 'vui lòng nhấn'
+  - 'xem thêm tại'
+  - 'chi tiết tại'
+  - 'tại đường link'
+  - 'theo đường link'
+  - 'link bên dưới'
+  - 'link phía dưới'
+  - 'đính kèm bên dưới'
+  - 'file đính kèm bên dưới'
+
+# --- Dòng rác: xoá cả dòng nếu dòng CHỈ chứa pattern này ---
+line_patterns:
+  - '^\s*TẠI ĐÂY\s*$'
+  - '^\s*tại đây\s*$'
+  - '^\s*xem tại đây\s*$'
+  - '^\s*<<.*>>\s*$'
+  - '^\s*·\s*$'
+  - '^\s*\.\s*$'
+  - '^\s*-\s*$'
+  - '^\s*\|\s*$'
+  - '^\s*\d{1,2}\s*$'
+
+# --- Ký tự cần thay thế (key: ký tự gốc, value: thay bằng) ---
+char_replacements:
+  "\u200b": ""
+  "\u200c": ""
+  "\u200d": ""
+  "\ufeff": ""
+  "\u00a0": " "
+  "\u00b7": ""
+  "\u2013": "-"
+  "\u2014": "-"
+  "\u2018": "'"
+  "\u2019": "'"
+  "\u201c": '"'
+  "\u201d": '"'
+  "\u2026": "..."

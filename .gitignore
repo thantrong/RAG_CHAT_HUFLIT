@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Môi trường (chứa API key, mật khẩu — KHÔNG commit)
+.env
+
+# Dữ liệu crawl + cleaned + file tải về (dung lượng lớn)
+cawl/data/
+
+# Queue crawler (sqlite, runtime)
+crawler_queue.sqlite
+
+# IDE / editor
+.history/
+.vscode/
+.idea/
+.DS_Store
+
+# Log + script tạm
+*.log
+tmp_*.py
